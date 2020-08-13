@@ -22,6 +22,9 @@ hooks:
   build: |
     pipenv install --system --deploy
     pipenv run jupyter-book build .
+    # pipenv run jupyter-book build . --builder pdfhtml
+    # pipenv run jupyter-book build . --builder latex
+    # pipenv run jupyter-book build . --builder pdflatex
 
 web:
     commands:
