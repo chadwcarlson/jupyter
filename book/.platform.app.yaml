@@ -22,11 +22,12 @@ hooks:
   build: |
     pipenv install --system --deploy
   deploy: |
+    touch _build/index.html
     echo "***** CLEAN *****"
-    pipenv run jupyter-book clean -a .
+    # pipenv run jupyter-book clean -a .
 
     echo "***** BUILD *****"
-    pipenv run jupyter-book build .
+    # pipenv run jupyter-book build .
     # pipenv run jupyter-book build . --builder pdfhtml
     # pipenv run jupyter-book build . --builder latex
     # cd _build/latex/ && make
