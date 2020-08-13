@@ -21,6 +21,7 @@ hooks:
   # assembling the codebase.
   build: |
     pipenv install --system --deploy
+  deploy: |
     pipenv run jupyter-book clean -a .
     pipenv run jupyter-book build .
     # pipenv run jupyter-book build . --builder pdfhtml
@@ -47,7 +48,17 @@ web:
 
 
 # # The size of the persistent disk of the application (in MB).
-# disk: 512
+disk: 512
+
+mounts:
+    "_build":
+        source: local
+        source_path: build
+
+    "test":
+        source: service
+        service: files
+        source_path: "jupyter_notebooks"
 
 # # Set a local R/W mount for logs
 # mounts:
