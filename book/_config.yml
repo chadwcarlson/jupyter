@@ -3,7 +3,7 @@ title: Jupyter Book on Platform.sh
 author: Platform.sh
 logo: logo.png
 exclude_patterns: 
-  - ".global/"
+  - ".global/*"
 
 latex:
   latex_documents:
