@@ -21,9 +21,11 @@ hooks:
   # assembling the codebase.
   build: |
     pipenv install --system --deploy
+    pipenv run jupyter-book clean -a .
     pipenv run jupyter-book build .
     # pipenv run jupyter-book build . --builder pdfhtml
     # pipenv run jupyter-book build . --builder latex
+    # cd _build/latex/ && make
     # pipenv run jupyter-book build . --builder pdflatex
 
 web:
