@@ -28,6 +28,8 @@ hooks:
     # jupyter-book clean -a .
 
     echo "***** BUILD *****"
+    ls -a 
+    ls -a test
     jupyter-book build .
     # pipenv run jupyter-book build . --builder pdfhtml
     # pipenv run jupyter-book build . --builder latex
