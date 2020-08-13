@@ -24,8 +24,8 @@ hooks:
     pip install -r requirements.txt
   deploy: |
     # touch _build/index.html
-    echo "***** CLEAN *****"
-    jupyter-book clean -a .
+    # echo "***** CLEAN *****"
+    # jupyter-book clean -a .
 
     echo "***** BUILD *****"
     jupyter-book build .
@@ -56,6 +56,9 @@ web:
 disk: 512
 
 mounts:
+    ".global":
+        source: local
+        source_path: "global"
     "_build":
         source: local
         source_path: "build"
