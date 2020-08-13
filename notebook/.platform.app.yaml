@@ -1,5 +1,5 @@
 # The name of this app. Must be unique within a project.
-name: app
+name: 'notebook'
 
 # The runtime the application uses.
 type: "python:3.7"
