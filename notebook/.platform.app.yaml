@@ -33,7 +33,7 @@ hooks:
       chmod +x start_command.sh
 
 # The size of the persistent disk of the application (in MB).
-disk: 2048
+disk: 1056
 
 # The writable mounts within the application container
 mounts:
@@ -49,8 +49,13 @@ mounts:
         source_path: "jupyter_path"
 
     # ~/jupyter/notebooks - The location where editable Notebooks are stored
-    "/jupyter/notebooks":
-        source: local
+    # "/jupyter/notebooks":
+    #     source: local
+    #     source_path: "jupyter_notebooks"
+
+    "jupyter/notebooks":
+        source: service
+        service: files
         source_path: "jupyter_notebooks"
 
 # The configuration of app when it is exposed to the web.
