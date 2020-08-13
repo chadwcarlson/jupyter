@@ -22,7 +22,7 @@ hooks:
   # assembling the codebase.
   build: |
     pipenv install
-    pipenv run jupyter-book build platform
+    pipenv run jupyter-book build platformsh
 
 web:
     commands:
