@@ -21,7 +21,7 @@ hooks:
   # The build hook runs before the application is deployed, and is useful for
   # assembling the codebase.
   build: |
-    pipenv --three install
+    pipenv install --system --deploy
     pipenv run jupyter-book build platformsh
 
 web:
