@@ -1,0 +1,8 @@
+# Book settings
+title: Jupyter Book on Platform.sh
+author: Platform.sh
+logo: logo.png
+
+latex:
+  latex_documents:
+    targetname: book.tex
