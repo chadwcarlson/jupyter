@@ -56,9 +56,9 @@ web:
 disk: 512
 
 mounts:
-    "/_build":
+    "_build":
         source: local
-        source_path: build
+        source_path: "build"
 
     "test":
         source: service
