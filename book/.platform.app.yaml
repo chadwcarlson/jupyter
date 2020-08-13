@@ -5,7 +5,7 @@
 # See https://docs.platform.sh/user_guide/reference/platform-app-yaml.html
 
 # The name of this app. Must be unique within a project.
-name: 'app'
+name: 'book'
 
 # The runtime the application uses.
 type: 'python:3.8'
@@ -21,7 +21,7 @@ hooks:
   # assembling the codebase.
   build: |
     pipenv install --system --deploy
-    pipenv run jupyter-book build platformsh
+    pipenv run jupyter-book build .
 
 web:
     commands:
@@ -30,7 +30,7 @@ web:
     locations:
         '/':
             # The public directory of the application relative to its root.
-            root: 'platformsh/_build/html'
+            root: '_build/html'
             passthru: true
             index: ['index.html']
             scripts: false
