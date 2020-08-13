@@ -14,7 +14,6 @@ type: 'python:3.8'
 dependencies:
     python3:
        pipenv: '2018.10.13'
-       jupyter-book: '0.7.4'
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
