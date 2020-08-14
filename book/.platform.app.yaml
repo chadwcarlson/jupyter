@@ -64,11 +64,10 @@ mounts:
     "_build":
         source: local
         source_path: "build"
-
-    "test":
-        source: service
-        service: files
-        source_path: "jupyter_notebooks"
+    # "test":
+    #     source: service
+    #     service: files
+    #     source_path: "jupyter_notebooks"
 
 # # Set a local R/W mount for logs
 # mounts:
