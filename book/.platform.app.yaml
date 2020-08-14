@@ -59,13 +59,13 @@ web:
 # # The size of the persistent disk of the application (in MB).
 disk: 512
 
-mounts:
-    ".global":
-        source: local
-        source_path: "global"
-    "_build":
-        source: local
-        source_path: "build"
+# mounts:
+#     ".global":
+#         source: local
+#         source_path: "global"
+#     "_build":
+#         source: local
+#         source_path: "build"
     # "test":
     #     source: service
     #     service: files
