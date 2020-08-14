@@ -24,7 +24,9 @@ hooks:
     # jupyter-book clean -a .
     # jupyter-book build .
   deploy: |
+    echo "***** CLEAN *****"
     jupyter-book clean -a .
+    echo "***** BUILD *****"
     jupyter-book build .
   #   pip install --user pipenv
   #   echo "***** CLEAN *****"
@@ -69,9 +71,9 @@ mounts:
         source: service
         service: files
         source_path: "jupyter_notebooks"
-    # "/.global":
-    #     source: local
-    #     source_path: "global"
+    "/.global":
+        source: local
+        source_path: "global"
     # "/.local":
     #     source: local
     #     source_path: "global"
