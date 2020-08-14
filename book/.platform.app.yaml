@@ -20,15 +20,16 @@ hooks:
   # The build hook runs before the application is deployed, and is useful for
   # assembling the codebase.
   build: |
+    # pip install -r requirements.txt
     pipenv install --system --deploy
-    # pipenv run jupyter-book clean -a .
-    # pipenv run jupyter-book build .
-  deploy: |
-    pip install --user pipenv
-    echo "***** CLEAN *****"
     pipenv run jupyter-book clean -a .
-    echo "***** BUILD *****"
     pipenv run jupyter-book build .
+  # deploy: |
+  #   pip install --user pipenv
+  #   echo "***** CLEAN *****"
+  #   pipenv run jupyter-book clean -a .
+  #   echo "***** BUILD *****"
+  #   pipenv run jupyter-book build .
     # pipenv run jupyter-book build . --builder pdfhtml
     # pipenv run jupyter-book build . --builder latex
     # cd _build/latex/ && make
@@ -67,15 +68,15 @@ mounts:
         source: service
         service: files
         source_path: "jupyter_notebooks"
-    "/.global":
-        source: local
-        source_path: "global"
-    "/.local":
-        source: local
-        source_path: "global"
-    "_build":
-        source: local
-        source_path: "build"
+    # "/.global":
+    #     source: local
+    #     source_path: "global"
+    # "/.local":
+    #     source: local
+    #     source_path: "global"
+    # "_build":
+    #     source: local
+    #     source_path: "build"
 
 # # Set a local R/W mount for logs
 # mounts:
