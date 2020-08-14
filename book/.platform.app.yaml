@@ -21,10 +21,11 @@ hooks:
   # assembling the codebase.
   build: |
     pip install -r requirements.txt
-    # pipenv install --system --deploy
+    # jupyter-book clean -a .
+    # jupyter-book build .
+  deploy: |
     jupyter-book clean -a .
     jupyter-book build .
-  # deploy: |
   #   pip install --user pipenv
   #   echo "***** CLEAN *****"
   #   pipenv run jupyter-book clean -a .
@@ -74,9 +75,9 @@ mounts:
     # "/.local":
     #     source: local
     #     source_path: "global"
-    # "_build":
-    #     source: local
-    #     source_path: "build"
+    "_build":
+        source: local
+        source_path: "build"
 
 # # Set a local R/W mount for logs
 # mounts:
