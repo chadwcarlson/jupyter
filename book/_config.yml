@@ -4,7 +4,7 @@ author: Platform.sh
 logo: logo.png
 exclude_patterns: 
   - ".global/*"
-  - "test/.ipynb_checkpoints/*"
+  - "test/*"
 
 latex:
   latex_documents:
