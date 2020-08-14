@@ -21,18 +21,13 @@ hooks:
   # assembling the codebase.
   build: |
     pipenv install --system --deploy
-    pipenv run jupyter-book clean -a .
-    pipenv run jupyter-book build .
-    # pip install -r requirements.txt
+    # pipenv run jupyter-book clean -a .
+    # pipenv run jupyter-book build .
   deploy: |
-    # touch _build/index.html
-    # echo "***** CLEAN *****"
-    # jupyter-book clean -a .
-
+    echo "***** CLEAN *****"
+    pipenv run jupyter-book clean -a .
     echo "***** BUILD *****"
-    ls -a 
-    # ls -a test
-    # jupyter-book build .
+    pipenv run jupyter-book build .
     # pipenv run jupyter-book build . --builder pdfhtml
     # pipenv run jupyter-book build . --builder latex
     # cd _build/latex/ && make
@@ -71,6 +66,15 @@ mounts:
         source: service
         service: files
         source_path: "jupyter_notebooks"
+    "/.global":
+        source: local
+        source_path: "global"
+    "/.local":
+        source: local
+        source_path: "global"
+    "_build":
+        source: local
+        source_path: "build"
 
 # # Set a local R/W mount for logs
 # mounts:
