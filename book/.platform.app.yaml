@@ -24,6 +24,7 @@ hooks:
     # pipenv run jupyter-book clean -a .
     # pipenv run jupyter-book build .
   deploy: |
+    pip install --user pipenv
     echo "***** CLEAN *****"
     pipenv run jupyter-book clean -a .
     echo "***** BUILD *****"
