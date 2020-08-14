@@ -20,10 +20,10 @@ hooks:
   # The build hook runs before the application is deployed, and is useful for
   # assembling the codebase.
   build: |
-    # pip install -r requirements.txt
-    pipenv install --system --deploy
-    pipenv run jupyter-book clean -a .
-    pipenv run jupyter-book build .
+    pip install -r requirements.txt
+    # pipenv install --system --deploy
+    jupyter-book clean -a .
+    jupyter-book build .
   # deploy: |
   #   pip install --user pipenv
   #   echo "***** CLEAN *****"
