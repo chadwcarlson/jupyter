@@ -10,11 +10,6 @@ name: 'book'
 # The runtime the application uses.
 type: 'python:3.8'
 
-# The build-time dependencies of the app.
-dependencies:
-    python3:
-       pipenv: '2018.10.13'
-
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
   # The build hook runs before the application is deployed, and is useful for
@@ -28,15 +23,6 @@ hooks:
     jupyter-book clean -a .
     echo "***** BUILD *****"
     jupyter-book build .
-  #   pip install --user pipenv
-  #   echo "***** CLEAN *****"
-  #   pipenv run jupyter-book clean -a .
-  #   echo "***** BUILD *****"
-  #   pipenv run jupyter-book build .
-    # pipenv run jupyter-book build . --builder pdfhtml
-    # pipenv run jupyter-book build . --builder latex
-    # cd _build/latex/ && make
-    # pipenv run jupyter-book build . --builder pdflatex
 
 web:
     commands:
