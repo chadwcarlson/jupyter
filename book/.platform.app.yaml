@@ -16,6 +16,7 @@ hooks:
   # assembling the codebase.
   build: |
     pip install -r requirements.txt
+    pip install -U jupyter-book
     # jupyter-book clean -a .
     # jupyter-book build .
   deploy: |
