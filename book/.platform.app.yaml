@@ -17,6 +17,7 @@ hooks:
   build: |
     pip install -r requirements.txt
     pip install -U jupyter-book
+    source jupyter-book
     # jupyter-book clean -a .
     # jupyter-book build .
   deploy: |
@@ -46,13 +47,6 @@ web:
 # # The size of the persistent disk of the application (in MB).
 disk: 512
 
-# mounts:
-#     ".global":
-#         source: local
-#         source_path: "global"
-#     "_build":
-#         source: local
-#         source_path: "build"
 mounts:
     "test":
         source: service
@@ -61,15 +55,7 @@ mounts:
     "/.global":
         source: local
         source_path: "global"
-    # "/.local":
-    #     source: local
-    #     source_path: "global"
     "_build":
         source: local
         source_path: "build"
 
-# # Set a local R/W mount for logs
-# mounts:
-#     'logs':
-#         source: local
-#         source_path: logs
