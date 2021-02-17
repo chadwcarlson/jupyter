@@ -50,11 +50,14 @@ conda clean -all
 conda install jupyterlab
 conda clean -all
 
-SAGE_VERSION=8.8
+conda install -c conda-forge jupyterlab
+conda clean -all
 
-curl -O http://mirrors.mit.edu/sage/src/sage-$SAGE_VERSION.tar.gz
-tar -xvf sage-$SAGE_VERSION.tar.gz
-mv sage-$SAGE_VERSION sage && rm sage-$SAGE_VERSION.tar.gz
+# SAGE_VERSION=8.8
+
+# curl -O http://mirrors.mit.edu/sage/src/sage-$SAGE_VERSION.tar.gz
+# tar -xvf sage-$SAGE_VERSION.tar.gz
+# mv sage-$SAGE_VERSION sage && rm sage-$SAGE_VERSION.tar.gz
 
 make configure
 ./configure --with-python=3
