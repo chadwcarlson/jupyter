@@ -10,12 +10,6 @@ name: 'book'
 # The runtime the application uses.
 type: 'python:3.8'
 
-# The build-time dependencies of the app.
-# dependencies:
-#     python3:
-#         jupyter-book: '0.8.2'
-      #  pipenv: '2018.10.13'
-
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
   # The build hook runs before the application is deployed, and is useful for
@@ -23,6 +17,7 @@ hooks:
   build: |
       pip install -r requirements.txt
       pip install -U jupyter-book
+  post_deploy: |
       jupyter-book build .
 
 web:
@@ -42,12 +37,18 @@ web:
                 \.(css|js|gif|jpe?g|png|ttf|eot|woff2?|otf|cast|mp4|json|yaml|ico|svg?|cast|mp4|json|yaml|svg?|ttf)$:
                     expires: 4w
 
+# The size of the persistent disk of the application (in MB).
+disk: 512
 
-# # The size of the persistent disk of the application (in MB).
-# disk: 512
+mounts:
+    "test":
+        source: service
+        service: files
+        source_path: "jupyter_notebooks"
+    # "/.global":
+    #     source: local
+    #     source_path: "global"
+    "_build":
+        source: local
+        source_path: "build"
 
-# # Set a local R/W mount for logs
-# mounts:
-#     'logs':
-#         source: local
-#         source_path: logs
