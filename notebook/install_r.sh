@@ -57,7 +57,7 @@ conda clean -all
 conda install jupyterlab
 conda clean -all
 
-conda config --add channels conda-forge
+# conda config --add channels conda-forge
 conda install -c conda-forge voila
 conda clean -all
 
