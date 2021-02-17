@@ -4,10 +4,22 @@
 #
 # See https://docs.platform.sh/user_guide/reference/routes-yaml.html
 
-"https://{default}/":
-    type: upstream
-    upstream: "app:http"
-
 "https://www.{default}/":
+    type: upstream
+    upstream: "book:http"
+
+"https://{default}/":
     type: redirect
-    to: "https://{default}/"
+    to: "https://www.{default}/"
+
+"http://notebook{default}/":
+  type: redirect
+  to: "https://www.notebook.{default}/"
+
+"https://www.notebook.{default}/":
+  type: upstream
+  upstream: "notebook:http"
+  primary: true
+  id: http
+  cache:
+      enabled: false

@@ -1,0 +1,60 @@
+# The name of this app. Must be unique within a project.
+name: 'notebook'
+
+# The runtime the application uses.
+type: "python:3.8"
+
+# The hooks executed at various points in the lifecycle of the application.
+hooks:
+    build: |
+      set -e
+      bash install_r.sh
+
+    deploy: |
+      set -e
+
+      cp files/* $PLATFORM_APP_DIR/jupyter/notebooks
+
+      # Copy a default configuration file into the proper config directory
+      cp default_config.py ~/.jupyter/jupyter_notebook_config.py
+
+# The size of the persistent disk of the application (in MB).
+disk: 1056
+
+# The writable mounts within the application container
+mounts:
+
+    # ~/.jupyter - Used for storing configuration files
+    "/.jupyter":
+        source: local
+        source_path: "jupyter_config_dir"
+
+    # ~/.local/share/jupyter - Jupyter's runtime data directory
+    "/.local/share/jupyter":
+        source: local
+        source_path: "jupyter_path"
+
+    # ~/jupyter/notebooks - The location where editable Notebooks are stored
+    # "/jupyter/notebooks":
+    #     source: local
+    #     source_path: "jupyter_notebooks"
+
+    "jupyter/notebooks":
+        source: service
+        service: files
+        source_path: "jupyter_notebooks"
+
+# The configuration of app when it is exposed to the web.
+web:
+    commands:
+        start: bash ./start_command.sh
+    upstream:
+        socket_family: tcp
+        protocol: http
+    locations:
+        "/":
+            passthru: true
+
+variables:
+    env:
+        PORT: 8888
