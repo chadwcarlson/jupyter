@@ -59,7 +59,7 @@ conda clean -all
 
 # conda config --add channels conda-forge
 conda install -c conda-forge voila
-conda clean -all
+# conda clean -all
 
 
 ###########################
