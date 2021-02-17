@@ -31,8 +31,8 @@ hooks:
       # Make the sample notebook accessible to the Jupyter server
       # cp sample_notebooks/* ~/jupyter/notebooks
 
-      # Make the start script executable
-      chmod +x start_command.sh
+    #   # Make the start script executable
+    #   chmod +x start_command.sh
 
 # The size of the persistent disk of the application (in MB).
 disk: 1056
