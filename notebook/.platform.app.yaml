@@ -2,7 +2,7 @@
 name: 'notebook'
 
 # The runtime the application uses.
-type: "python:3.7"
+type: "python:3.8"
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
