@@ -47,12 +47,12 @@ conda update -n base -c defaults conda
 ###########################
 
 # Create the environment for sage.
-conda create -n sage
-conda clean -all
+# conda create -n sage
+# conda clean -all
 
-# Activate the environment.
-conda activate sage
-conda clean -all
+# # Activate the environment.
+# conda activate sage
+# conda clean -all
 
 conda install jupyterlab
 conda clean -all

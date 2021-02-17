@@ -6,10 +6,10 @@
 . /app/conda/etc/profile.d/conda.sh
 
 # Activate the `r-env` conda environment that was created in the build hook
-conda activate sage
+conda activate base
 
 # Run the jupyter notebook server, specifying the config file to use
 # jupyter notebook --config="~/.jupyter/jupyter_notebook_config.py"
 jupyter lab --config="~/.jupyter/jupyter_notebook_config.py"
 
-jupyter kernelspec install --user ./sage
+# jupyter kernelspec install --user ./sage

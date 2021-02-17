@@ -23,6 +23,8 @@ hooks:
     deploy: |
       set -e
 
+      cp files/* $PLATFORM_APP_DIR/jupyter/notebooks
+
       # Copy a default configuration file into the proper config directory
       cp default_config.py ~/.jupyter/jupyter_notebook_config.py
 
