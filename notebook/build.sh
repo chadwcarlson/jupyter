@@ -38,14 +38,14 @@ conda update -n base -c defaults conda
 echo "-------------------- 10 - Clean up --------------------"
 conda clean -all
 
-conda config --add channels conda-forge
-conda clean -all
+# conda config --add channels conda-forge
+# conda clean -all
 
-conda create -n sage
-conda clean -all
+# conda create -n sage
+# conda clean -all
 
-conda activate sage
-conda clean -all
+# conda activate sage
+# conda clean -all
 
 conda install jupyterlab
 conda clean -all

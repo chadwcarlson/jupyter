@@ -57,15 +57,20 @@ conda clean -all
 conda install jupyterlab
 conda clean -all
 
+conda config --add channels conda-forge
+conda install -c conda-forge voila
+conda clean -all
+
+
 ###########################
 # Install Sage from source
 ###########################
 
-SAGE_VERSION=8.8
+# SAGE_VERSION=8.8
 
-curl -O http://mirrors.mit.edu/sage/src/sage-$SAGE_VERSION.tar.gz
-tar -xvf sage-$SAGE_VERSION.tar.gz
-mv sage-$SAGE_VERSION sage && rm sage-$SAGE_VERSION.tar.gz
+# curl -O http://mirrors.mit.edu/sage/src/sage-$SAGE_VERSION.tar.gz
+# tar -xvf sage-$SAGE_VERSION.tar.gz
+# mv sage-$SAGE_VERSION sage && rm sage-$SAGE_VERSION.tar.gz
 
 ###########################
 # Configure the Sage kernel
