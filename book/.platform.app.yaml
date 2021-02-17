@@ -5,26 +5,25 @@
 # See https://docs.platform.sh/user_guide/reference/platform-app-yaml.html
 
 # The name of this app. Must be unique within a project.
-name: 'book'
+name: 'app'
 
 # The runtime the application uses.
 type: 'python:3.8'
+
+# The build-time dependencies of the app.
+# dependencies:
+#     python3:
+#         jupyter-book: '0.8.2'
+      #  pipenv: '2018.10.13'
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
   # The build hook runs before the application is deployed, and is useful for
   # assembling the codebase.
   build: |
-    pip install -r requirements.txt
-    pip install -U jupyter-book
-    # . jupyter-book
-    # jupyter-book clean -a .
-    # jupyter-book build .
-  deploy: |
-    echo "***** CLEAN *****"
-    jupyter-book clean -a .
-    echo "***** BUILD *****"
-    jupyter-book build .
+      # jupyter-book build .
+      pip install -r requirements.txt
+      pip install -U jupyter-book
 
 web:
     commands:
@@ -45,17 +44,10 @@ web:
 
 
 # # The size of the persistent disk of the application (in MB).
-disk: 512
+# disk: 512
 
-mounts:
-    "test":
-        source: service
-        service: files
-        source_path: "jupyter_notebooks"
-    "/.global":
-        source: local
-        source_path: "global"
-    "_build":
-        source: local
-        source_path: "build"
-
+# # Set a local R/W mount for logs
+# mounts:
+#     'logs':
+#         source: local
+#         source_path: logs
