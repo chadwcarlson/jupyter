@@ -57,6 +57,7 @@ conda update -n base -c defaults conda
 conda install jupyterlab
 conda clean -all
 
+conda install bqplot
 # conda config --add channels conda-forge
 conda install -c conda-forge voila
 # conda clean -all
