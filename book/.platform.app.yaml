@@ -21,9 +21,9 @@ hooks:
   # The build hook runs before the application is deployed, and is useful for
   # assembling the codebase.
   build: |
-      # jupyter-book build .
       pip install -r requirements.txt
       pip install -U jupyter-book
+      jupyter-book build .
 
 web:
     commands:
